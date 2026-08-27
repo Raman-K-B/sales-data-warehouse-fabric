@@ -2,15 +2,17 @@
 
 ## Project Overview
 
-This project demonstrates an end-to-end Data Warehouse solution using Microsoft Fabric, SQL, Lakehouse Architecture, Medallion Architecture, and Power BI.
+This project demonstrates an end-to-end Data Warehouse solution using Microsoft Fabric, SQL, Power BI, Star Schema Design, and Medallion Architecture.
+
+The platform analyzes sales transactions, customer behavior, product performance, and regional sales trends.
 
 ## Objectives
 
 - Build a Star Schema Data Warehouse
 - Implement Bronze, Silver, and Gold Layers
 - Create Fact and Dimension Tables
-- Develop Power BI Dashboards
-- Demonstrate Data Engineering Concepts
+- Develop Sales Analytics Dashboards
+- Demonstrate Modern Data Engineering Concepts
 
 ## Technology Stack
 
@@ -23,4 +25,12 @@ This project demonstrates an end-to-end Data Warehouse solution using Microsoft 
 
 ## Project Status
 
-🚧 Repository Setup In Progress
+✅ Repository Setup Complete
+
+✅ Raw Datasets Uploaded
+
+🚧 Architecture Design In Progress
+
+🚧 Star Schema Design In Progress
+
+🚧 Silver Layer Development In Progress
