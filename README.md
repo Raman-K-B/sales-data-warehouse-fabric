@@ -1,84 +1,122 @@
 # Sales Data Warehouse using Microsoft Fabric
 
-## Project Overview
-
-This project demonstrates an end-to-end **Sales Data Warehouse Solution** built using **Microsoft Fabric**, **SQL**, **Power BI**, **Star Schema Modeling**, and **Medallion Architecture**.
-
-The solution transforms raw sales data into business-ready insights, enabling organizations to analyze sales performance, customer behavior, product trends, and regional sales patterns through modern data engineering and analytics practices.
-
----
-
-## Project Objectives
-
-- Build a scalable Star Schema Data Warehouse
-- Implement Bronze, Silver, and Gold layers using Medallion Architecture
-- Create Fact and Dimension tables for analytical reporting
-- Develop ETL/ELT pipelines for data transformation
-- Build interactive Power BI dashboards
-- Demonstrate modern Data Engineering concepts using Microsoft Fabric
-- Generate business insights through sales analytics
+https://img.shields.io/badge/Microsoft-Fabric-blue
+https://img.shields.io/badge/SQL-Data%20Warehouse-red
+https://img.shields.io/badge/Power%20BI-Analytics-yellow
+https://img.shields.io/badge/Status-Completed-brightgreen
 
 ---
 
-## Technology Stack
+# Project Overview
 
-### Data Platform
+This project demonstrates a fully implemented end-to-end **Sales Data Warehouse Solution** using **Microsoft Fabric**, **SQL**, **Power BI**, **Star Schema Modeling**, and **Medallion Architecture**.
+
+The solution transforms raw sales data into business-ready insights through data ingestion, transformation, dimensional modeling, and visualization. It enables organizations to analyze sales performance, customer behavior, product performance, and regional sales trends through interactive dashboards and KPI-driven reporting.
+
+---
+
+# Project Completion Status
+
+✅ Repository Setup Completed
+
+✅ Raw Data Ingestion Completed
+
+✅ Bronze Layer Implemented
+
+✅ Silver Layer Implemented
+
+✅ Gold Layer Implemented
+
+✅ Star Schema Designed
+
+✅ Data Warehouse Developed
+
+✅ SQL Transformations Completed
+
+✅ Power BI Dashboards Developed
+
+✅ Documentation Completed
+
+🎉 **Project Successfully Completed**
+
+---
+
+# Key Features
+
+- End-to-End Data Engineering Pipeline
+- Microsoft Fabric Lakehouse Implementation
+- Medallion Architecture (Bronze, Silver, Gold)
+- Star Schema Data Warehouse
+- Fact & Dimension Modeling
+- SQL-Based Data Transformation
+- Interactive Power BI Dashboards
+- Business KPI Reporting
+- Scalable Analytics Solution
+- Modern Data Warehousing Best Practices
+
+---
+
+# Technology Stack
+
+## Data Platform
+
 - Microsoft Fabric
 - OneLake
 - Lakehouse
 - Data Warehouse
 
-### Data Engineering
+## Data Engineering
+
 - SQL
 - ETL / ELT
-- Data Factory Pipelines
-- Notebooks
+- Fabric Notebooks
+- Dataflows Gen2
 
-### Analytics & Reporting
+## Data Modeling
+
+- Star Schema
+- Fact Tables
+- Dimension Tables
+- Dimensional Modeling
+
+## Analytics & Reporting
+
 - Power BI
 - Semantic Model
 - DAX
 
-### Data Modeling
-- Star Schema
-- Fact & Dimension Modeling
-- Medallion Architecture
-
 ---
 
-## Microsoft Fabric Components Used
+# Microsoft Fabric Components Used
 
 - OneLake
 - Lakehouse
 - Data Warehouse
-- Data Factory Pipelines
-- Dataflows Gen2
 - Notebooks
+- Dataflows Gen2
 - Semantic Model
 - Power BI Reports
 
 ---
 
-## Dataset
+# Dataset
 
-The project uses sales datasets containing:
-
-- Sales Transactions
-- Customer Information
-- Product Information
-- Sales Regions
-- Order Details
-- Revenue Data
-- Date Attributes
-
-### Dataset Entities
+The project uses sales datasets containing information related to:
 
 - Customers
 - Products
-- Orders
-- Sales
+- Sales Transactions
 - Regions
+- Revenue
+- Orders
 - Calendar Dates
+
+### Source Files
+
+- Customers.xlsx
+- Products.xlsx
+- Sales.xlsx
+- Regions.xlsx
 
 ---
 
@@ -88,27 +126,26 @@ The project uses sales datasets containing:
                    Source Files
                          │
                          ▼
-                 Microsoft Fabric
-                      OneLake
+                    OneLake
                          │
                          ▼
-                   Bronze Layer
-               (Raw Data Storage)
+                  Bronze Layer
+                 (Raw Data Store)
                          │
                          ▼
-                   Silver Layer
-            (Data Cleaning & Validation)
+                  Silver Layer
+             (Cleaned & Validated)
                          │
                          ▼
-                    Gold Layer
-             (Business Ready Data)
+                   Gold Layer
+              (Business Ready Data)
                          │
                          ▼
                  Data Warehouse
-                  Star Schema
+                   Star Schema
                          │
                          ▼
-                 Semantic Model
+                  Semantic Model
                          │
                          ▼
                   Power BI Reports
@@ -116,16 +153,28 @@ The project uses sales datasets containing:
 
 ---
 
+# Architecture Diagram
+
+architecture/star-schema-model.png
+
+> Detailed architecture documentation is available in:
+>
+> `architecture/solution-architecture.md`
+
+---
+
 # Medallion Architecture
 
 ## Bronze Layer
 
-Purpose:
+### Purpose
+
 - Store raw source data
 - Preserve original records
-- Enable data auditing and traceability
+- Enable traceability and auditing
 
-Activities:
+### Activities
+
 - Data ingestion
 - Raw file storage
 - Historical data retention
@@ -134,32 +183,36 @@ Activities:
 
 ## Silver Layer
 
-Purpose:
-- Clean and validate data
-- Apply business rules
-- Standardize formats
+### Purpose
 
-Activities:
+- Data cleansing
+- Data validation
+- Data standardization
+
+### Activities
+
 - Remove duplicates
 - Handle missing values
-- Standardize column names
-- Data type conversions
-- Data quality checks
+- Standardize formats
+- Apply business rules
+- Validate data quality
 
 ---
 
 ## Gold Layer
 
-Purpose:
-- Create business-ready datasets
-- Build analytical models
-- Optimize reporting performance
+### Purpose
 
-Activities:
+- Business-ready datasets
+- Analytical reporting
+- Optimized querying
+
+### Activities
+
 - Fact table creation
 - Dimension table creation
 - KPI calculations
-- Aggregated datasets
+- Business aggregations
 
 ---
 
@@ -169,14 +222,16 @@ Activities:
 
 ### FactSales
 
-Measures:
+#### Measures
+
 - Sales Amount
-- Quantity Sold
 - Revenue
 - Profit
+- Quantity Sold
 - Discount Amount
 
-Foreign Keys:
+#### Foreign Keys
+
 - Customer Key
 - Product Key
 - Date Key
@@ -188,7 +243,6 @@ Foreign Keys:
 
 ### DimCustomer
 
-Attributes:
 - Customer ID
 - Customer Name
 - Customer Segment
@@ -196,7 +250,6 @@ Attributes:
 
 ### DimProduct
 
-Attributes:
 - Product ID
 - Product Name
 - Product Category
@@ -204,7 +257,6 @@ Attributes:
 
 ### DimDate
 
-Attributes:
 - Date
 - Day
 - Month
@@ -213,12 +265,11 @@ Attributes:
 
 ### DimRegion
 
-Attributes:
 - Region ID
+- Region Name
 - City
 - State
 - Country
-- Region Name
 
 ---
 
@@ -236,60 +287,99 @@ DimProduct ───── FactSales ───── DimDate
 
 ---
 
-# End-to-End Data Flow
+# Data Model Diagram
+
+dashboard/screenshots/star_schema_model.png
+
+---
+
+# ETL / ELT Process
+
+## Extract
+
+- Load source Excel files into Microsoft Fabric Lakehouse
+- Store raw data in Bronze Layer
+
+## Transform
+
+- Data cleansing
+- Data validation
+- Null handling
+- Duplicate removal
+- Data standardization
+- Business rule implementation
+
+## Load
+
+- Load transformed data into Gold Layer
+- Create Fact and Dimension tables
+- Publish semantic model for reporting
+
+---
+
+# Data Pipeline Workflow
 
 ```text
-Source Data
-    │
-    ▼
-Bronze Layer
-    │
-    ▼
-Silver Layer
-    │
-    ▼
-Gold Layer
-    │
-    ▼
-Data Warehouse
-    │
-    ▼
-Semantic Model
-    │
-    ▼
-Power BI Dashboard
+Excel Files
+     │
+     ▼
+ OneLake Storage
+     │
+     ▼
+ Bronze Layer
+ (Raw Data)
+     │
+     ▼
+ Silver Layer
+ (Cleaned Data)
+     │
+     ▼
+ Gold Layer
+ (Curated Data)
+     │
+     ▼
+ Data Warehouse
+     │
+     ▼
+ Semantic Model
+     │
+     ▼
+ Power BI Dashboard
 ```
 
 ---
 
 # Business Use Cases
 
-The platform supports the following analytics use cases:
+## Sales Performance Analysis
 
-### Sales Performance Analysis
-- Total Sales
-- Revenue Trends
-- Monthly Growth
-
-### Customer Analytics
-- Customer Segmentation
-- Customer Retention
-- Customer Purchase Patterns
-
-### Product Analytics
-- Best Selling Products
-- Product Categories Performance
-- Revenue by Product
-
-### Regional Analytics
-- Region-wise Sales
-- Country Performance
-- Market Analysis
-
-### Executive Reporting
-- KPI Monitoring
 - Revenue Tracking
-- Business Performance Dashboard
+- Sales Growth Analysis
+- Monthly Trend Analysis
+
+## Customer Analytics
+
+- Customer Segmentation
+- Purchase Behavior Analysis
+- Customer Retention Insights
+
+## Product Analytics
+
+- Best Selling Products
+- Category Performance
+- Product Revenue Contribution
+
+## Regional Analytics
+
+- Regional Revenue Analysis
+- Geographic Performance
+- Market Trends
+
+## Executive Reporting
+
+- KPI Monitoring
+- Strategic Business Insights
+- Performance Tracking
 
 ---
 
@@ -299,12 +389,12 @@ The platform supports the following analytics use cases:
 - Total Sales
 - Total Orders
 - Total Customers
-- Average Order Value
 - Profit Margin
 - Revenue Growth %
-- Sales by Region
-- Sales by Product Category
-- Monthly Sales Trend
+- Average Order Value
+- Top Products
+- Regional Sales Performance
+- Monthly Sales Trends
 
 ---
 
@@ -313,151 +403,200 @@ The platform supports the following analytics use cases:
 ## Sales Overview Dashboard
 
 Features:
-- Total Sales
-- Revenue Trends
-- KPI Cards
-- Sales Comparison
 
-## Customer Analytics Dashboard
+- Revenue Analysis
+- Sales Trends
+- KPI Cards
+- Profit Insights
+
+---
+
+## Customer Analysis Dashboard
 
 Features:
+
+- Customer Segmentation
 - Customer Distribution
-- Top Customers
-- Customer Segments
+- Purchase Analysis
+
+---
 
 ## Product Performance Dashboard
 
 Features:
-- Product Rankings
-- Category Analysis
-- Revenue Contribution
+
+- Top Products
+- Product Ranking
+- Category Sales Analysis
+
+---
 
 ## Regional Sales Dashboard
 
 Features:
-- Geographic Analysis
-- Regional Trends
-- Market Performance
+
+- Regional Revenue Analysis
+- Geographic Sales Distribution
+- Region-wise Growth Trends
+
+---
+
+# Dashboard Screenshots
+
+## Sales Dashboard
+
+dashboard/screenshots/sales_dashboard.png
+
+## Sales Trend Analysis
+
+dashboard/screenshots/Sales%20Trend%20Over%20Time.png
+
+## Sales By Customer Segment
+
+dashboard/screenshots/Sales%20by%20Customer%20Segment.png
+
+## Sales By Region
+
+dashboard/screenshots/Sales%20By%20Region.png
+
+## Top Products
+
+dashboard/screenshots/Top%20Products%20by%20Sales.png
 
 ---
 
 # Repository Structure
 
 ```text
-Sales-Data-Warehouse-Fabric/
+sales-data-warehouse-fabric/
 │
-├── datasets/
+├── architecture/
+│   ├── solution-architecture.md
+│   └── star-schema-model.png
+│
+├── dashboard/
+│   └── screenshots/
+│       ├── sales_dashboard.png
+│       ├── Sales Trend Over Time.png
+│       ├── Sales by Customer Segment.png
+│       ├── Sales By Region.png
+│       ├── Top Products by Sales.png
+│       └── star_schema_model.png
+│
+├── data/
 │   ├── raw/
-│   ├── bronze/
 │   ├── silver/
 │   └── gold/
 │
 ├── notebooks/
+│   ├── 01_ingest_raw_data.ipynb
+│   ├── 02_transform_silver.ipynb
+│   └── 03_build_gold_star_schema.ipynb
 │
-├── sql-scripts/
+├── sql/
+│   └── create_star_schema.sql
 │
-├── data-pipelines/
+├── documents/
+│   └── star-schema-design.md
 │
-├── architecture/
-│
-├── powerbi/
-│
-├── screenshots/
-│
-├── documentation/
-│
-└── README.md
+├── README.md
+└── LICENSE
 ```
 
 ---
 
-# Project Status
+# Business Value
 
-| Component | Status |
-|------------|---------|
-| Repository Setup | ✅ Complete |
-| Raw Dataset Upload | ✅ Complete |
-| Architecture Design | 🚧 In Progress |
-| Star Schema Design | 🚧 In Progress |
-| Bronze Layer | ✅ Complete |
-| Silver Layer Development | 🚧 In Progress |
-| Gold Layer Development | ⏳ Planned |
-| Data Warehouse Development | ⏳ Planned |
-| Semantic Model Creation | ⏳ Planned |
-| Power BI Dashboard Development | ⏳ Planned |
-| Documentation | 🚧 In Progress |
+This solution enables stakeholders to:
+
+- Monitor business performance using KPI dashboards
+- Identify top-performing products
+- Understand customer purchasing patterns
+- Analyze regional sales trends
+- Improve strategic decision-making
+- Support data-driven business operations
 
 ---
 
-# Expected Deliverables
+# Project Outcomes
 
-- Microsoft Fabric Lakehouse
-- Complete Medallion Architecture
-- Bronze Layer Implementation
-- Silver Layer Transformations
-- Gold Layer Business Models
-- Data Warehouse Solution
-- Star Schema Design
-- SQL Data Transformations
-- Fact & Dimension Tables
-- Power BI Reports
-- Business KPI Dashboard
-- Technical Documentation
+Successfully designed and implemented a complete Sales Data Warehouse solution using Microsoft Fabric.
+
+Achievements include:
+
+- End-to-End Medallion Architecture
+- Star Schema Data Warehouse Design
+- Fact & Dimension Modeling
+- SQL-Based Data Transformation
+- Power BI Dashboard Development
+- Business KPI Reporting
+- Enterprise Data Engineering Best Practices
 
 ---
 
 # Skills Demonstrated
 
 ### Data Engineering
+
 - Data Ingestion
+- ETL / ELT Development
 - Data Transformation
-- ETL/ELT Development
 - Data Quality Management
 
 ### Data Warehousing
-- Dimensional Modeling
+
 - Star Schema Design
+- Dimensional Modeling
 - Fact & Dimension Modeling
 
 ### Microsoft Fabric
-- Lakehouse
+
 - OneLake
-- Data Factory
+- Lakehouse
 - Data Warehouse
+- Dataflows Gen2
 - Notebooks
 
 ### Analytics
-- Business Intelligence
-- Power BI Reporting
+
+- Power BI
+- DAX
 - Dashboard Development
-- KPI Monitoring
+- KPI Reporting
 
 ---
 
 # Future Enhancements
 
-- Incremental Data Loading
-- Change Data Capture (CDC)
 - Real-Time Data Streaming
+- Incremental Data Loading
 - Row-Level Security (RLS)
 - CI/CD Deployment
-- Data Quality Framework
-- Automated Monitoring & Alerting
-- AI-Powered Sales Forecasting
-- Fabric Spark Integration
+- AI-Based Sales Forecasting
+- Predictive Analytics
+- Fabric Eventstream Integration
 
 ---
 
-# Project Highlights
+# License
 
-Designed and implemented an end-to-end Sales Data Warehouse solution using Microsoft Fabric, leveraging Medallion Architecture and Star Schema modeling. Built scalable data pipelines, structured analytical models, and business intelligence dashboards to support data-driven decision-making. The solution enables comprehensive analysis of sales performance, customer behavior, product trends, and regional business performance.
+This project is licensed under the MIT License.
 
 ---
 
-## Author
+# Author
 
-### Raman KB
+## Raman KB
 
 **Data Engineer | Microsoft Fabric | SQL | Power BI | Data Warehousing**
 
-Connect with me on LinkedIn and GitHub to follow the project's progress and future enhancements.
+📍 Ahmedabad, Gujarat, India
+
+### Connect With Me
+
+- LinkedIn: https://www.linkedin.com/in/raman-k-b-600748200
+- GitHub: https://github.com/Raman-K-B
+
+---
+
+⭐ If you found this project useful, consider giving it a star.
